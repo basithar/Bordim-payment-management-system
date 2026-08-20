@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.1) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-slate-900/70 backdrop-blur-xl border border-slate-800/80 shadow-2xl rounded-2xl transition-all duration-300;
+  }
+  
+  .glass-card-hover {
+    @apply hover:border-indigo-500/40 hover:shadow-indigo-500/10 hover:-translate-y-0.5 transition-all duration-300;
+  }
+
+  .glass-input {
+    @apply bg-slate-950/60 border border-slate-800 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 rounded-xl px-4 py-2.5 text-slate-100 placeholder-slate-500 outline-none transition-all duration-200;
+  }
+
+  .badge-pending {
+    @apply bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 w-fit;
+  }
+
+  .badge-approved {
+    @apply bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 w-fit;
+  }
+
+  .badge-rejected {
+    @apply bg-rose-500/10 text-rose-400 border border-rose-500/30 px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 w-fit;
+  }
+
+  .badge-excused {
+    @apply bg-purple-500/10 text-purple-400 border border-purple-500/30 px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 w-fit;
+  }
+
+  .gradient-btn {
+    @apply bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold py-2.5 px-5 rounded-xl shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/35 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-300 to-emerald-400 font-extrabold;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(51, 65, 85, 0.8);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
